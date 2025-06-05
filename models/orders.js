@@ -59,7 +59,7 @@ const Order = sequelize.define("Order", {
   },
   notification: {
     type: DataTypes.INTEGER,
-    allowNull: true,
+    allowNull: false,
   },
   date: {
     type: DataTypes.DATE,
