@@ -21,7 +21,6 @@ const addProduct = async (req, res) => {
     if (req.files.image3) images.push(req.files.image3[0].path);
     if (req.files.image4) images.push(req.files.image4[0].path);
 
-    console.log(images[0])
     try {
         const {
             name,
@@ -40,9 +39,9 @@ const addProduct = async (req, res) => {
             image:images, // ← أضفها هنا أيضاً
             date: new Date(date) || new Date()
         });
-        res.status(200).json({ success: true, newProduct,files : req.files, msg: "product added successfully" });
+        res.status(200).json({ success: true, newProduct, msg: "product added successfully" });
     } catch (error) {
-        res.json({ err: error, msg: "fail to add product" });
+        res.json({ err: error.errors[0], msg: "fail to add product" });
     }
 };
 
