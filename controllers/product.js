@@ -21,7 +21,7 @@ const addProduct = async (req, res) => {
     if (req.files.image3) images.push(req.files.image3[0].path);
     if (req.files.image4) images.push(req.files.image4[0].path);
 
-    console.log(images)
+    console.log(images[0])
     try {
         const {
             name,
