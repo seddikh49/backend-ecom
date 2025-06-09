@@ -52,11 +52,6 @@ const Product = sequelize.define('Product', {
   date: {
     type: DataTypes.DATE,
     allowNull: false,
-    validate: {
-      notEmpty: {
-        msg: "اسم المنتج لا يمكن أن يكون فارغًا"
-      }
-    }
   }
 }, {
   tableName: 'products',

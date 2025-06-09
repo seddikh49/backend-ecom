@@ -37,11 +37,11 @@ const addProduct = async (req, res) => {
             price: Number(price),
             category,
             image:images, // ← أضفها هنا أيضاً
-            date: new Date(date) || new Date()
+            date: new Date()
         });
         res.status(200).json({ success: true, newProduct, msg: "product added successfully" });
     } catch (error) {
-        res.json({ err: error.errors[0], msg: "fail to add product" });
+        res.json({ err: error, msg: "fail to add product" });
     }
 };
 
